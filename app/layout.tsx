@@ -4,9 +4,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { useState, useEffect } from 'react'
 import { RecoilRoot, useRecoilState } from 'recoil'
-import RecoilContextProvider from './RecoilContextProvider'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,14 +19,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // const [isClient, setIsClient] = useState(false)
-  
-  // useEffect(() => {
-  //   setIsClient(true)
-  // }, [])
-
-  // if (!isClient) return null
-  // console.log({isClient})
 
 
   return (
