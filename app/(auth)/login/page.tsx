@@ -101,7 +101,7 @@ const Page = (props: Props) => {
             { loading ? ( <Icon icon="svg-spinners:eclipse-half" className="text-3xl" /> ) : ( <>Log In</> )}
           </button>
         </form>
-        <Link href="/reset-password" className="hover:text-blue-700 focus:text-blue-700 active:text-blue-700 underline hover:no-underline focus:no-underline active:no-underline transition-all font-medium">Forgot your password?</Link>
+        {/* <Link href="/reset-password" className="hover:text-blue-700 focus:text-blue-700 active:text-blue-700 underline hover:no-underline focus:no-underline active:no-underline transition-all font-medium">Forgot your password?</Link> */}
         <div className="h-[1px] w-full mx-auto bg-gray-300/50"></div>
         <div className="flex items-center justify-center flex-wrap gap-2">
           <p className="text-gray-400">Don&apos;t have an account?</p>

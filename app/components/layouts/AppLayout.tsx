@@ -139,7 +139,7 @@ const AppLayout = ({children, ...props}: Props) => {
             // GET CURRENT USER SONGS 
             setLoadingUser(false)
         }else {
-          window.location.href='/login';
+            router.push('/login')
         }
         });
     },[loading,setUser])

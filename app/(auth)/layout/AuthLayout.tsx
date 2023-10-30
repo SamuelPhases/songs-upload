@@ -104,34 +104,6 @@ const AuthLayout = ({children, ...props}: AuthLayoutProps) => {
   }, [])
 
 
-  // const [check, setCheck] = useState(false)
-
-  // const checkUser =() => {
-  //   onAuthStateChanged(auth, async (user:any) => {
-  //     if (user) {
-  //       const docRef = doc(db, "users", user.uid);
-  //       const docSnap = await getDoc(docRef);
-  //       if (docSnap.exists()) {
-  //         if (docSnap.data().displayName !== '' || docSnap.data().displayName !== null) {
-  //           setCheck(false)
-  //           console.log('data ==>>',docSnap.data())
-  //           window.location.href = '/'
-  //         } else {
-  //           setCheck(true)
-  //         }
-  //       } else {
-  //         setCheck(true)
-  //       }
-  //     } else {
-  //       setCheck(true)
-  //     }
-  //   });
-    
-  // }
-  // useEffect(()=>{
-  //   checkUser()
-  // },[])
-
 
   if (!isClient) return null
 
