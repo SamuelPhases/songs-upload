@@ -19,13 +19,13 @@ import firebase from "firebase/compat/app";
 //   measurementId: "G-1VPPYKN6QJ"
 // };
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_APP_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_APP_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_APP_PROJECTID,
-  storageBucket: process.env.NEXT_PUBLIC_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_APP_MESSENGER_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_APP_MEASUREMENT_ID
+  apiKey: "AIzaSyA5Xczy_3D00mQIajC5JNS1uLxFLohMH0c",
+  authDomain: "songs-app-55255.firebaseapp.com",
+  projectId: "songs-app-55255",
+  storageBucket: "songs-app-55255.appspot.com",
+  messagingSenderId: "501110904786",
+  appId: "1:501110904786:web:0187c0a7482783f4285a0b",
+  measurementId: "G-BQCJJXSLQ4"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
