@@ -15,7 +15,6 @@ import Title from "@/app/components/Title"
 import AppLayout from "../../components/layouts/AppLayout"
 import CardRowItem from "../components/CardRowItem"
 import About from "../components/About"
-import Discography from "../components/Discography"
 import { db } from "@/firebase"
 import { FollowDataProps, PlaylistsProps, SongProps, UserProps, moreLength } from "@/app/utils"
 import Image from "next/image"
@@ -408,11 +407,6 @@ const Page = (props: Props) => {
                 { playlists.length > 0 && ( <SectionRow title={`${artist?.firstName}'s Playlists`} playlist playlists={playlists} /> ) }
                 { artistFollowInfo.followers.length > 0 && <SectionRow title="Followers" artist artistIds={artistFollowInfo.followers} user={user} /> }
                 { artistFollowInfo.following.length > 0 && <SectionRow title="Following" artist artistIds={artistFollowInfo.following} user={user} /> }
-                {/* <Discography/>
-                <SectionRow title="Featuring Dunsin Oyekan" />
-                <SectionRow title="Albums" albums />
-                <SectionRow title="Appears on" playlist />
-                <SectionRow title="Discovered on" /> */}
             </div>
             <About artist={artist} followersCount={artistFollowInfo.followers.length} />
           </div>
