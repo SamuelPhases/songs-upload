@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Icon } from '@iconify/react'
-import { useRecoilState, useRecoilValue } from "recoil"
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { DocumentData, and, arrayRemove, arrayUnion, collection, doc, getDoc, getDocs, orderBy, query, updateDoc, where } from "firebase/firestore"
 import { useParams } from "next/navigation"
 import { format } from "date-fns"
@@ -404,7 +404,7 @@ const Page = (props: Props) => {
                 </div>
             </div>
             <div className="grid gap-10 py-10">
-                { playlists.length > 0 && ( <SectionRow title={`${artist?.firstName}'s Playlists`} playlist playlists={playlists} /> ) }
+                { playlists.length > 0 && ( <SectionRow title={`${artist?.firstName}'s Playlists`} playlist playlists={playlists} setCurrentSong={setCurrentSong} /> ) }
                 { artistFollowInfo.followers.length > 0 && <SectionRow title="Followers" artist artistIds={artistFollowInfo.followers} user={user} /> }
                 { artistFollowInfo.following.length > 0 && <SectionRow title="Following" artist artistIds={artistFollowInfo.following} user={user} /> }
             </div>

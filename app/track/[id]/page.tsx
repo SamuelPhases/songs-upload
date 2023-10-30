@@ -268,7 +268,7 @@ const Page = (props: Props) => {
             </div>
         </div>
         <div className="grid gap-10 py-10">
-          {list.length > 0 && <SectionRow title={`Playlists by ${postedBy?.userName}`} playlist playlists={list} />}
+          {list.length > 0 && <SectionRow title={`Playlists by ${postedBy?.userName}`} playlist playlists={list} setCurrentSong={setCurrentSong} />}
           {otherArtists.length > 0 && <SectionRow title="Other Artists" profile profileCardDetails={otherArtists} />}
         </div>
         {track && postedBy && (

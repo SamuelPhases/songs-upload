@@ -147,12 +147,12 @@ const CardRowItem = ({ id, index, likeLoading, setLikeLoading, setUser, user, re
           </div> */}
           <div className="flex items-center justify-between gap-5 group hover:bg-gray-900 transition-all rounded-xl px-5 py-3">
           <div className="flex items-center gap-4 flex-1">
-            <div className="w-5 h-5 flex items-center justify-center opacity-100 transition-all group-hover:opacity-0 group-hover:hidden">
+            <div className="w-5 h-5 flex items-center justify-center opacity-100 transition-all">
               <p className="text-gray-500 text-[13px]">{index}</p>
             </div>
-            <button type="button" className="w-5 h-5 group-hover:inline-flex items-center justify-center opacity-0 transition-all group-hover:opacity-100 hidden">
+            {/* <button type="button" className="w-5 h-5 group-hover:inline-flex items-center justify-center opacity-0 transition-all group-hover:opacity-100 hidden">
               <Icon icon="line-md:pause-to-play-filled-transition" className="text-xl text-white" />
-            </button>
+            </button> */}
             <div className="grid gap-0.5">
               <Link href={`/track/${id}`} className="text-white text-sm capitalize font-bold transition-all hover:underline focus:underline active:underline truncate">
                 {song?.name}

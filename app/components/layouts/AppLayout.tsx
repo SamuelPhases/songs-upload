@@ -299,9 +299,9 @@ const AppLayout = ({children, ...props}: Props) => {
                                         <button type="button" className="hidden 2xl:inline-block py-1.5 px-5 text-sm rounded-3xl text-white hover:text-gray-900 focus:text-gray-900 active:text-gray-900 bg-black hover:bg-white focus:bg-white active:bg-white transition font-bold">Install App</button>
                                         {user && (
                                             <>
-                                                <Link href="/content-feed" className="rounded-full w-9 h-9 text-white hover:text-gray-900 focus:text-gray-900 active:text-gray-900 bg-black hover:bg-white focus:bg-white active:bg-white transition flex items-center justify-center">
+                                                {/* <Link href="/content-feed" className="rounded-full w-9 h-9 text-white hover:text-gray-900 focus:text-gray-900 active:text-gray-900 bg-black hover:bg-white focus:bg-white active:bg-white transition flex items-center justify-center">
                                                     <Icon icon="basil:notification-solid" className="text-xl" />
-                                                </Link>
+                                                </Link> */}
                                                 {/* <Link href="/account" className="rounded-full w-9 h-9 text-white hover:text-gray-900 focus:text-gray-900 active:text-gray-900 bg-black hover:bg-white focus:bg-white active:bg-white transition flex items-center justify-center"> */}
                                                 <button type="button" onClick={toggleLinksModal} className="rounded-full w-9 h-9 text-white hover:text-gray-900 focus:text-gray-900 active:text-gray-900 bg-black hover:bg-white focus:bg-white active:bg-white transition flex items-center justify-center">
                                                     <Icon icon="line-md:account" className="text-xl" />

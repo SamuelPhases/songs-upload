@@ -87,9 +87,9 @@ const Sidebar = ({user, playlists, setLoading, setLoadingText, updatingProfile, 
                             <button type="button" onClick={handleNewPlaylist} className="w-7 h-7 rounded-full text-gray-400 transition hover:bg-gray-800/100 hover:text-white focus:text-white active:text-white flex items-center justify-center">
                                 <Icon icon="line-md:plus" className="text-xl" />
                             </button>
-                            <button type="button" className="w-7 h-7 rounded-full text-gray-400 transition hover:bg-gray-800/100 hover:text-white focus:text-white active:text-white hidden lg:flex items-center justify-center">
+                            {/* <button type="button" className="w-7 h-7 rounded-full text-gray-400 transition hover:bg-gray-800/100 hover:text-white focus:text-white active:text-white hidden lg:flex items-center justify-center">
                                 <Icon icon="line-md:arrow-small-right" className="text-xl" />
-                            </button>
+                            </button> */}
                         </div>
                     )}
                 </div>
@@ -122,12 +122,12 @@ const Sidebar = ({user, playlists, setLoading, setLoadingText, updatingProfile, 
                             {sideNav && (
                                 <>
                                     <div className="hidden lg:flex gap-7 items-center justify-between px-3">
-                                        <div className="flex items-center bg-gray-700 text-white rounded-lg pr-0.5">
+                                        {/* <div className="flex items-center bg-gray-700 text-white rounded-lg pr-0.5">
                                             <label htmlFor="search" className="w-7 h-7 rounded-xl flex items-center justify-center">
                                                 <Icon icon="line-md:search-filled" className="text-xl" />
                                             </label>
                                             <input type="search" id="search" placeholder="Search in your library" className="text-sm py-0.5 bg-transparent transition-all w-0 focus:w-[180px] active:w-[180px]" />
-                                        </div>
+                                        </div> */}
                                         <button type="button" className="text-sm w-fit flex items-center gap-3 font-medium text-gray-300/50 hover:text-white focus:text-white active:text-white">
                                             Recents
                                             <Icon icon="line-md:navigation-right-down" className="text-base" />
