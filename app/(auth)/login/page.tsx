@@ -50,11 +50,11 @@ const Page = (props: Props) => {
 
   const handleSignIn = async (e: React.SyntheticEvent) => {
     e.preventDefault()
-    setLoading(true)
     try {
       // console.log({data})
       if (data.email.trim() === "") return toast.error("Email is required")
       if (data.password.trim() === "") return toast.error("Password is required")
+      setLoading(true)
       await signInWithEmailAndPassword(auth, data.email, data.password)
       toast.success('Login successfully')
       router.replace('/')

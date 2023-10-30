@@ -49,17 +49,17 @@ const Page = (props: Props) => {
 
   const handleSignUp = async (e: React.SyntheticEvent) => {
     e.preventDefault()
-    setLoading(true)
     try {
       // console.log({data})
-      const res = await createUserWithEmailAndPassword(auth, data.email, data.password)
-      const user = res.user
-      // await updateProfile(auth.currentUser, {displayName: data.userName})
-      // const verifyEmail = await sendEmailVerification(auth.currentUser)
       if (data.firstName.trim() === "") return toast.error("First name is required")
       if (data.lastName.trim() === "") return toast.error("Last name is required")
       if (data.userName.trim() === "") return toast.error("Username is required")
       if (data.password.trim() === "") return toast.error("Password is required")
+      setLoading(true)
+      const res = await createUserWithEmailAndPassword(auth, data.email, data.password)
+      const user = res.user
+      // await updateProfile(auth.currentUser, {displayName: data.userName})
+      // const verifyEmail = await sendEmailVerification(auth.currentUser)
       await setDoc(doc(db, 'users', user.uid), {
         email: data.email,
         displayPicture: "",
