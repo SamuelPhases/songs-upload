@@ -53,8 +53,8 @@ const Page = (props: Props) => {
     setLoading(true)
     try {
       // console.log({data})
-      if (data.email.trim() === "") toast.error("Email is required")
-      if (data.password.trim() === "") toast.error("Password is required")
+      if (data.email.trim() === "") return toast.error("Email is required")
+      if (data.password.trim() === "") return toast.error("Password is required")
       await signInWithEmailAndPassword(auth, data.email, data.password)
       toast.success('Login successfully')
       router.replace('/')
