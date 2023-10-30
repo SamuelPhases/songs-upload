@@ -14,13 +14,13 @@ import { currentPlaying } from '../state/atoms'
 
 interface PlaylistCardProps {
   playlist: PlaylistsProps,
-  user: LoggedInUserProps | DocumentData,
+  // user: LoggedInUserProps | DocumentData,
   // setTrack: SetterOrUpdater<SongProps | DocumentData | null>,
   setCurrentSong: SetterOrUpdater<CurrentSongProps | null>,
 }
 
 // const CurrentUserPlaylistCard = ({ playlist, user, setTrack, setCurrentSong }: PlaylistCardProps) => {
-const CurrentUserPlaylistCard = ({ playlist, user, setCurrentSong }: PlaylistCardProps) => {
+const CurrentUserPlaylistCard = ({ playlist,  setCurrentSong }: PlaylistCardProps) => {
 
   // const setCurrentSong = useSetRecoilState(currentPlaying)
 
@@ -123,7 +123,11 @@ const CurrentUserPlaylistCard = ({ playlist, user, setCurrentSong }: PlaylistCar
           )}
         </div>
         <h4 className="text-white font-extrabold text-sm md:text-base line-clamp-1 capitalize">{playlist?.name}</h4>
-        <p className="line-clamp-2 text-[13px] md:text-sm font-bold text-gray-500"> By {user?.userName}</p>
+        <PlaylistCardInfo owner={playlist?.owner} />
+        {/* {user?.userName ? (
+          <p className="line-clamp-2 text-[13px] md:text-sm font-bold text-gray-500"> By {user?.userName}</p>
+        ) : (
+        )} */}
       </div>
     </Link>
   )

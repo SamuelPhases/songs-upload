@@ -68,7 +68,7 @@ const Media = ({ song, user, setCurrentSong }: Props) => {
           )}
         </div>
         <Link href={`/track/${song.id}`} className="text-white font-semibold text-base capitalize line-clamp-1 transition-all focus:underline hover:underline">{song.name}</Link>
-        {/* <CardInfoName owner={song.owner} /> */}
+        <CardInfoName owner={song.owner} />
       </div>
     </div>
   )

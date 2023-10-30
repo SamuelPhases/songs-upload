@@ -53,6 +53,8 @@ const Page = (props: Props) => {
     setLoading(true)
     try {
       // console.log({data})
+      if (data.email.trim() === "") toast.error("Email is required")
+      if (data.password.trim() === "") toast.error("Password is required")
       await signInWithEmailAndPassword(auth, data.email, data.password)
       toast.success('Login successfully')
       router.replace('/')
@@ -71,18 +73,17 @@ const Page = (props: Props) => {
     <AuthLayout>
       <div className="w-[90%] md:w-4/5 lg:w-3/4 xl:w-1/2 2xl:w-2/5 h-full bg-black rounded py-10 px-10 flex flex-col items-center justify-center gap-10 text-white">
         <h1 className="text-5xl font-black w-3/4 text-center mx-auto">Log in to Songs</h1>
-        <div className="grid gap-3 w-3/5 mx-auto">
+        {/* <div className="grid gap-3 w-3/5 mx-auto">
           {socialAuthLogin.map(({color,icon,name}, index) => (
             <button
               key={index}
               type="button"
               className="rounded-3xl font-medium transition-all border border-gray-300/50 hover:border-white focus:border-white active:border-white flex items-center justify-center gap-2 py-2.5 px-7">
-                {/* <Icon icon={icon} className={`${color}`} /> */}
                 Continue with {name}
             </button>
           ))}
-        </div>
-        <div className="h-[1px] w-full mx-auto bg-gray-300/50"></div>
+        </div> */}
+        {/* <div className="h-[1px] w-full mx-auto bg-gray-300/50"></div> */}
         <form onSubmit={handleSignIn} className="w-3/5 mx-auto grid gap-5">
           <div className="grid gap-1">
             <label htmlFor="email" className="text-sm font-bold">Email address</label>

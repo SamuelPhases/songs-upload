@@ -70,21 +70,16 @@ const SectionRow = ({ albums = false, artist = false, className, nullActionableT
           <>
             {playlists?.map((playlist: PlaylistsProps) => (
               <>
-                {user ? (
+                {setCurrentSong && <CurrentUserPlaylistCard key={playlist?.id} playlist={playlist} setCurrentSong={setCurrentSong} />}
+                {/* {user ? (
                   <>
-                    {/* {setTrack && setCurrentSong && (
-                      <CurrentUserPlaylistCard key={playlist?.id} playlist={playlist} user={user} setTrack={setTrack} setCurrentSong={setCurrentSong} />
-                    )} */}
                     {setCurrentSong && <CurrentUserPlaylistCard key={playlist?.id} playlist={playlist} user={user} setCurrentSong={setCurrentSong} />}
                   </>
                 ) : (
                   <>
-                    {/* {setTrack && setCurrentSong && (
-                      <PlaylistCard key={playlist?.id} playlist={playlist} setTrack={setTrack} setCurrentSong={setCurrentSong} />
-                    )} */}
                     <PlaylistCard key={playlist?.id} playlist={playlist} />
                   </>
-                )}
+                )} */}
               </>
             ))}
           </>
@@ -93,15 +88,16 @@ const SectionRow = ({ albums = false, artist = false, className, nullActionableT
           <>
             {songs?.map((song: SongProps,index) => (
               <>
-                {user ? (
+              {setCurrentSong && <Media key={index} song={song}  setCurrentSong={setCurrentSong} />}
+                {/* {user ? (
                   <>
                     {setCurrentSong && <CurrentUserMedia key={index} song={song} user={user} setCurrentSong={setCurrentSong} />}
                   </>
                 ) : (
                   <>
-                    {setCurrentSong && <Media key={index} song={song}  setCurrentSong={setCurrentSong} />}
+                  {setCurrentSong && <Media key={index} song={song}  setCurrentSong={setCurrentSong} />}
                   </>
-                )}
+                )} */}
               </>
             ))}
           </>

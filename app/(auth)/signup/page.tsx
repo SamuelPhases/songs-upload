@@ -56,6 +56,10 @@ const Page = (props: Props) => {
       const user = res.user
       // await updateProfile(auth.currentUser, {displayName: data.userName})
       // const verifyEmail = await sendEmailVerification(auth.currentUser)
+      if (data.firstName.trim() === "") toast.error("First name is required")
+      if (data.lastName.trim() === "") toast.error("Last name is required")
+      if (data.userName.trim() === "") toast.error("Username is required")
+      if (data.password.trim() === "") toast.error("Password is required")
       await setDoc(doc(db, 'users', user.uid), {
         email: data.email,
         displayPicture: "",
@@ -94,18 +98,17 @@ const Page = (props: Props) => {
     <AuthLayout>
       <div className="w-[90%] md:w-4/5 lg:w-3/4 xl:w-3/5 2xl:w-[45%] h-full bg-black rounded py-10 px-10 flex flex-col items-center justify-center gap-10 text-white">
         <h1 className="text-5xl font-black w-3/4 text-center mx-auto">Sign up for free to start listening.</h1>
-        <div className="grid gap-3 w-3/5 mx-auto">
+        {/* <div className="grid gap-3 w-3/5 mx-auto">
           {socialAuthLogin.map(({color,icon,name}, index) => (
             <button
               key={index}
               type="button"
               className="rounded-3xl font-medium transition-all border border-gray-300/50 hover:border-white focus:border-white active:border-white flex items-center justify-center gap-2 py-2.5 px-7">
-                {/* <Icon icon={icon} className={`${color}`} /> */}
                 Continue with {name}
             </button>
           ))}
         </div>
-        <div className="h-[1px] w-full mx-auto bg-gray-300/50"></div>
+        <div className="h-[1px] w-full mx-auto bg-gray-300/50"></div> */}
         <form onSubmit={handleSignUp} className="w-3/5 mx-auto grid gap-5">
           <div className="grid gap-1">
             <label htmlFor="userName" className="text-sm font-bold">What should we call you?</label>
@@ -128,7 +131,7 @@ const Page = (props: Props) => {
             <label htmlFor="password" className="text-sm font-bold">Create a password</label>
             <input type="password" id="password" name="password" onChange={handleChange} placeholder="Create a password." className="bg-gray-900/50 text-sm transition-all border border-gray-300/50 hover:border-white focus:border-white active:border-white rounded-md p-3" />
           </div>
-          <div className="grid gap-1">
+          {/* <div className="grid gap-1">
             <p className="text-sm font-bold">What&apos;s your date of birth?</p>
             <div className="flex gap-3 w-full">
               <div className="flex flex-col items-start gap-1 w-[25%]">
@@ -149,8 +152,8 @@ const Page = (props: Props) => {
                 <input type="number" id="year" name="year" min={1980} max={2005} placeholder="YYYY" className="bg-gray-900/50 text-sm transition-all border border-gray-300/50 hover:border-white focus:border-white active:border-white rounded-md p-3 w-full" />
               </div>
             </div>
-          </div>
-          <div className="grid gap-1">
+          </div> */}
+          {/* <div className="grid gap-1">
             <p className="text-sm font-bold">What&apos;s your gender?</p>
             <div className="flex gap-3">
               <div className="flex items-center gap-1 w-1/2">
@@ -162,7 +165,7 @@ const Page = (props: Props) => {
                 <label htmlFor="female">Female</label>
               </div>
             </div>
-          </div>
+          </div> */}
           <button
               type="submit"
               disabled={loading}

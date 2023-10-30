@@ -121,14 +121,6 @@ const Sidebar = ({user, playlists, setLoading, setLoadingText, updatingProfile, 
                         <div className="grid gap-5">
                             {sideNav && (
                                 <>
-                                    <div className="hidden lg:flex gap-4 flex-wrap px-3">
-                                        {/* <button type="button" key={index} className="w-fit px-4 py-2 font-medium rounded-2xl bg-gray-900 text-sm text-white capitalize"> */}
-                                        {tags.map((tag, index) => (
-                                            <button type="button" key={index} className="w-fit px-4 py-1.5 font-medium rounded-xl bg-gray-700 text-sm text-white capitalize">
-                                                {tag}
-                                            </button>
-                                        ))}
-                                    </div>
                                     <div className="hidden lg:flex gap-7 items-center justify-between px-3">
                                         <div className="flex items-center bg-gray-700 text-white rounded-lg pr-0.5">
                                             <label htmlFor="search" className="w-7 h-7 rounded-xl flex items-center justify-center">
