@@ -67,7 +67,6 @@ const UploadMusic = ({ toggleModal, user }: Props) => {
     };
     const songUpload = async (e: any) => {
       const file = e.target.files[0]
-      console.log({file})
       const validFileType = expectedAudioFileTypes.includes(file.type.split('/')[1])
       const validSize = Math.ceil(file.size / 1048576)
       if (file) {
@@ -90,7 +89,6 @@ const UploadMusic = ({ toggleModal, user }: Props) => {
                   setDuration(formattedDuration);
                   URL.revokeObjectURL(audioSong.src); // Clean up
                 });
-                // console.log({data})
                 const res = await uploadFile(file)
                 if (res.trim() !== '') {
                   setData({...data, songUrl:res})
@@ -113,8 +111,6 @@ const UploadMusic = ({ toggleModal, user }: Props) => {
         toast.error('No file selected')
       }
     } 
-    // console.log({duration})
-    console.log({audio})
     const handleSongUpload = async (e: React.SyntheticEvent) => {
       e.preventDefault()
       if (data.name.trim() === "") return toast.error('Name field is required.')
@@ -139,13 +135,10 @@ const UploadMusic = ({ toggleModal, user }: Props) => {
           const res = await addDoc(collection(db, "songs"), newSong);
           const newSongList: SongProps[] | any[] = [...songs, {id: res.id, ...newSong}]
           setSongs(newSongList)
-          // console.log(res.data())
-          // console.log(res.id)
           setLoading(false)
           toggleModal()
           toast.success('Song uploaded successfully')
         } catch (error: any) {
-        console.log({error})
         setLoading(false)
         toast.error(error?.message)
         } finally {

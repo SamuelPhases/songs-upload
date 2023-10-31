@@ -17,7 +17,6 @@ export default function Home() {
     // }, [])
 
     // if (!isClient) return null
-    // console.log({isClient})
     const users = useRecoilValue(otherUsers)
     const songs = useRecoilValue(allSongs)
     const otherPlaylists = useRecoilValue(otherUsersPlaylists)
@@ -26,8 +25,6 @@ export default function Home() {
     const refactorViewHistory = useRecoilValue(userRefactorViewHistory)
     const user = useRecoilValue(loggedInUser)
 
-    // console.log({songs})
-  // console.log({otherPlaylists})
 
   return (
     <AppLayout>

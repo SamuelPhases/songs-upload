@@ -53,11 +53,9 @@ const Page = (props: Props) => {
   const [user, setUser] = useRecoilState(loggedInUser)
   const followData = useRecoilValue(followInformation)
 
-  // console.log({user})
   const playlists = useRecoilValue(playlistsItems)
   const songs = useRecoilValue(userSongs)
   const setCurrentSong = useSetRecoilState(currentPlaying)
-  // console.log({songs})
   const [likeLoading, setLikeLoading] = useRecoilState(likedLoading)
   const [updateProfileModal, setUpdateProfileModal] = useRecoilState(updateProfilePageModal)
   const toggleProfileModal = () => setUpdateProfileModal(!updateProfileModal)

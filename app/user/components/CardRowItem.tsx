@@ -99,12 +99,9 @@ const CardRowItem = ({ deleting, id, index, likeLoading, setDeleting, setLikeLoa
     const deleteSong = async (id: string) => {
       if (user) {
         if (user.id === song?.owner) {
-          // console.log(id)
           setDeleting(true)
           try {
-            // console.log('hi')
             liked && handleLike(id)
-            // console.log('hi')
             const playlistsRef = collection(db, "playlists");
             const q = query(playlistsRef, where("songs", "array-contains", id));
             const querySnapshot = await getDocs(q);
@@ -145,7 +142,6 @@ const CardRowItem = ({ deleting, id, index, likeLoading, setDeleting, setLikeLoa
               const newRefactorViewHistory = refactorViewHistory.filter((trackId: string) => trackId !== id)
               setRefactorViewHistory(newRefactorViewHistory)
             }
-            // console.log('hi')
             await deleteDoc(doc(db, "songs", id))
             toast.success('Deleted song')
           } catch (error: any) {

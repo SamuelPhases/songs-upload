@@ -33,7 +33,6 @@ const Page = (props: Props) => {
 
   const [user, setUser] = useRecoilState(loggedInUser)
   const [likeLoading, setLikeLoading] = useRecoilState(likedLoading)
-  // console.log({user})
   // if (!isClient) return null
 
   return (

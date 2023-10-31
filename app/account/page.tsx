@@ -97,7 +97,6 @@ const Page = (props: Props) => {
   ]
 
   const handlePrivacyList = (name: string) => {
-    console.log({name})
     switch (name) {
       case 'Sign out everywhere':
         logout()
@@ -111,7 +110,6 @@ const Page = (props: Props) => {
   const logout = async () => {
     try {
       await signOut(auth)
-      console.log('hello')
       router.replace('/login')
       toast.success('Successfully signed out.')
     } catch (error: any) {
@@ -190,14 +188,14 @@ const Page = (props: Props) => {
           <div className="grid">
             {privacyList.map(({icon,name,url},index) => (
               <div key={index} className="flex items-center justify-between gap-5 px-3 h-14 relative group/tab rounded-lg overflow-hidden">
-                <button type="button" onChange={()=>console.log(name)} className="p-3 bg-transparent absolute inset-0 rounded-lg before:absolute before:w-0 before:h-0 before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-[#00000030] active:before:w-full focus:before:w-full hover:before:w-full active:before:h-full focus:before:h-full hover:before:h-full group/tab-active:before:w-full group/tab-focus:before:w-full group/tab-hover:before:w-full group/tab-active:before:h-full group/tab-focus:before:h-full group/tab-hover:before:h-full before:origin-center transition-all before:transition-all"></button>
+                <button type="button" className="p-3 bg-transparent absolute inset-0 rounded-lg before:absolute before:w-0 before:h-0 before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-[#00000030] active:before:w-full focus:before:w-full hover:before:w-full active:before:h-full focus:before:h-full hover:before:h-full group/tab-active:before:w-full group/tab-focus:before:w-full group/tab-hover:before:w-full group/tab-active:before:h-full group/tab-focus:before:h-full group/tab-hover:before:h-full before:origin-center transition-all before:transition-all"></button>
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-lg bg-gray-700/50 flex items-center justify-center">
                     <Icon icon={icon} className="text-xl" />
                   </div>
                   <p>{name}</p>
                 </div>
-                <button type="button" onChange={()=>console.log(name)} className="w-7 h-7 z-10 bg-transparent text-gray-400/50 group-focus:text-white transition-all hover:text-white focus:text-white active:text-white flex items-center justify-center">
+                <button type="button" className="w-7 h-7 z-10 bg-transparent text-gray-400/50 group-focus:text-white transition-all hover:text-white focus:text-white active:text-white flex items-center justify-center">
                   <Icon icon="fluent:chevron-right-32-filled" className="text-xl" />
                 </button>
               </div>

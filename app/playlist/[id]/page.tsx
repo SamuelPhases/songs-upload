@@ -65,14 +65,12 @@ const Page = (props: Props) => {
   const [editData, setEditData] = useState({imgUrl: ``, name: ``, description: ``, genre: ``})
   const [image, setImage] = useState<string>("")
   const [playlists, setPlaylists] = useRecoilState(playlistsItems)
-  // console.log({playlists})
 
   useEffect(() => {
     const getPlaylist = async (id: string) => {
       const docRef = doc(db, "playlists", id);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        // console.log(docSnap.data())
         setPlaylist({id, ...docSnap.data()})
         setEditData({...editData, imgUrl: docSnap.data().imgUrl, name: docSnap.data().name.toUpperCase(), description: docSnap.data().description, genre: docSnap.data().genre})
         // setImage(docSnap.data().imgUrl)
@@ -82,11 +80,9 @@ const Page = (props: Props) => {
     }
     typeof(id) === "string" && getPlaylist(id)
   },[id,setPlaylist])
-  // console.log({playlist})
   // },[id,setPlaylist,updatePlaylistLoading])
   // },[id,setPlaylist,updatePlaylistLoading,editData])
 
-  // console.log({playlist})
   const handleEditData = (e: any) => setEditData({...editData, [e.target.name]: e.target.value})
   const maximumFileSize = 2
   const expectedFileTypes = ['png','jpeg','jpg']
@@ -122,14 +118,12 @@ const Page = (props: Props) => {
       toast.error('No file selected')
     }
   } 
-  // console.log({image})
   const editPlaylist = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     if (editData.name.trim() === "") return toast.error('Name field is required.')
     setLoading(true)
     if (typeof(id) === "string") {
       try {
-        console.log({id})
         const playlistRef = doc(db, "playlists", id);
         const data = {...playlist,
           imgUrl: editData.imgUrl ?? "",
@@ -138,7 +132,6 @@ const Page = (props: Props) => {
           genre: editData.genre.toLowerCase(),
           updatedAt: Date.now()
         }
-        console.log({data})
         await updateDoc(playlistRef, data);
         setLoading(false)
         const newPlaylists: PlaylistsProps[] = playlists.map((playlist,index) => {
@@ -153,7 +146,6 @@ const Page = (props: Props) => {
         toast.success('Playlist updated successfully')
         toggleEditModal()
       } catch (error: any) {
-        console.log({error})
         setLoading(false)
         toast.error(error?.message)
       }
@@ -241,7 +233,6 @@ const Page = (props: Props) => {
   const toggleShowMore = () => setShowMore(!showMore)
 
 
-  // console.log({user})
   // if (!isClient) return null
   const active = playlist?.owner === user?.id
   const [currentSong, setCurrentSong] = useRecoilState(currentPlaying)

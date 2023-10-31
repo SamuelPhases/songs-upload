@@ -76,7 +76,6 @@ const CardRowItem = ({ index, likeLoading, setLikeLoading, setUser, song, user }
       typeof(song.id) === "string" && user && checkLikedSong(song.id)
   },[song,user])
 
-//   console.log({song})
 
   return (
     <div className="flex items-center justify-between gap-3 group hover:bg-gray-900 transition-all rounded-xl p-2 md:px-3 lg:px-5 md:py-3">

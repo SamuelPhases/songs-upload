@@ -29,7 +29,6 @@ const DisplayCard = ({ playlist, user }: Props) => {
             const docRef = doc(db, "songs", id);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-            //   console.log(docSnap.data())
               setSong(docSnap.data())
             } else {
               setSong(null)
@@ -43,7 +42,6 @@ const DisplayCard = ({ playlist, user }: Props) => {
         getSong(playlist.songs[0])
       }
     },[playlist,setSong])
-    // console.log({playlist})
 
 
   return (

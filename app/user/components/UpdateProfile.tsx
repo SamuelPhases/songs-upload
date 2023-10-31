@@ -93,7 +93,6 @@ const UploadProfile = ({ toggleModal, updatingProfile, user, setUpdatingProfile 
                 const querySnapshot = await getDocs(q);
                 querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
-                // console.log(doc.id, " => ", doc.data());
                 users.push(doc.data().userName)
                 });
                 if (users.length === 0) {
@@ -104,7 +103,6 @@ const UploadProfile = ({ toggleModal, updatingProfile, user, setUpdatingProfile 
                         toggleModal()
                         toast.success('Profile updated successfully')
                     } catch (error: any) {
-                    console.log({error})
                     setUpdatingProfile(false)
                     toast.error(error?.message)
                     } finally {
@@ -123,7 +121,6 @@ const UploadProfile = ({ toggleModal, updatingProfile, user, setUpdatingProfile 
                     toggleModal()
                     toast.success('Profile updated successfully')
                 } catch (error: any) {
-                console.log({error})
                 setUpdatingProfile(false)
                 toast.error(error?.message)
                 } finally {

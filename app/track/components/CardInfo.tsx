@@ -28,7 +28,6 @@ const CardInfo = ({ id, active, date, duration, viewCount, postedBy, setPostedBy
         const docRef = doc(db, "users", id);
         const docSnap = await getDoc(docRef)
         if (docSnap.exists()) {
-            console.log(docSnap.data())
             setPostedBy(docSnap.data())
         } else {
           setPostedBy(null)

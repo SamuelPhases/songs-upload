@@ -51,7 +51,7 @@ const Media = ({ song, user, setCurrentSong }: Props) => {
     }
   }
 
-  // console.log({song})
+  
   return (
     <div className="rounded-lg group relative h-52 lg:h-56 xl:h-60 w-full flex flex-col items-center p-3">
       <button type="button" className="absolute inset-0 h-full w-full rounded-lg bg-gray-900 group-hover:bg-gray-800/50 hover:bg-gray-800/50 focus:bg-gray-800/50 active:bg-gray-800/50 flex flex-col gap-3 text-left"></button>

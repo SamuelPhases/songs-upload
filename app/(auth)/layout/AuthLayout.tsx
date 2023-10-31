@@ -29,12 +29,9 @@ const AuthLayout = ({children, ...props}: AuthLayoutProps) => {
   // //       // ...
   // //       const data = await getDoc(doc(db, "users", uid))
   // //       if (data.exists()) {
-  // //         console.log("Document data:", data.data());
   // //       } else {
   // //         // docSnap.data() will be undefined in this case
-  // //         console.log("No such document!");
   // //       }
-  // //       // console.log({data})
   // //       setUser(user)
   // //     } else {
   // //       setUser(null)
@@ -44,7 +41,6 @@ const AuthLayout = ({children, ...props}: AuthLayoutProps) => {
   // //   })
   // // },[setUser])
 
-  // console.log({user})
 
   // useEffect(() => {
   //   const checkUser = () => {
@@ -56,12 +52,9 @@ const AuthLayout = ({children, ...props}: AuthLayoutProps) => {
   //         // ...
   //         const data = await getDoc(doc(db, "users", uid))
   //         if (data.exists()) {
-  //           console.log("Document data:", data.data());
   //         } else {
   //           // docSnap.data() will be undefined in this case
-  //           console.log("No such document!");
   //         }
-  //         // console.log({data})
   //         setUser(user)
   //       } else {
   //         setUser(null)
@@ -79,12 +72,9 @@ const AuthLayout = ({children, ...props}: AuthLayoutProps) => {
   //         const docRef = doc(db, "users", uid);
   //         const data = await getDoc(docRef)
   //         if (data.exists()) {
-  //           console.log("Document data:", data.data());
   //         } else {
   //           // docSnap.data() will be undefined in this case
-  //           console.log("No such document!");
   //         }
-  //         // console.log({data})
   //         setUser(user)
   //       } else {
   //         setUser(null)

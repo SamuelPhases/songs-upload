@@ -58,7 +58,6 @@ const Page = (props: Props) => {
   const [user, setUser] = useRecoilState(loggedInUser)
   const [playlists, setPlaylists] = useState<PlaylistsProps[]>([])
   const [otherArtists, setOtherArtists] = useState<UserProps[]>([])
-  // console.log({otherArtists})
   const [artistFollowInfo, setArtistFollowInfo] = useState<FollowDataProps | DocumentData>({followers: [],following:[]})
   const [followingValue, setFollowingValue] = useState<boolean>(false)
   const [loadingFollow, setLoadingFollow] = useState(false)
@@ -171,7 +170,6 @@ const Page = (props: Props) => {
     typeof(id) === "string" && user && followingUser(id)
   },[loadingFollow,id,user])
 
-  // console.log({artistSongs})
   const handleFollow = async (id: string) => {
     if (typeof(id) === "string" && user) {
       setLoadingFollow(true)
@@ -302,8 +300,6 @@ const Page = (props: Props) => {
 
 
   // if (!isClient) return null
-  // console.log({artistSongs})
-  console.log({artist})
 
   return (
     <AppLayout> 

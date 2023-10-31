@@ -36,7 +36,6 @@ const CardRowItem = ({ id, index, likeLoading, setLikeLoading, setUser, user, re
           const docRef = doc(db, "songs", id);
           const docSnap = await getDoc(docRef);
           if (docSnap.exists()) {
-          //   console.log(docSnap.data())
             setSong({songUrl: id,...docSnap.data()})
           } else {
             setSong(null)

@@ -50,7 +50,6 @@ const Page = (props: Props) => {
     }
   ])
   const genre = useRecoilValue(selectedGenre)
-  // console.log('User =>', user)
   const { id } = useParams()
   const [loading, setLoading] = useState<boolean>(false)
   const [track, setTrack] = useRecoilState(viewTrack)
@@ -85,7 +84,6 @@ const Page = (props: Props) => {
             } 
             // toast.success('Track viewed successfully')
           } catch (error: any) {
-          // console.log({error})
           toast.error(error?.message)
           } finally {
             setLoading(false)
@@ -111,7 +109,6 @@ const Page = (props: Props) => {
             } 
             // toast.success('Added to view history')
           } catch (error: any) {
-          // console.log({error})
           toast.error(error?.message)
           } finally {
             setLoading(false)
@@ -186,9 +183,6 @@ const Page = (props: Props) => {
     }
   },[user,track,id])
 
-  // console.log({otherArtists})
-  // // console.log({song})
-  // console.log({viewedSongs})
 
   const active = user?.id === track?.owner
   const [picked, setPicked] = useState(false)

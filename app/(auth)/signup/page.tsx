@@ -50,7 +50,6 @@ const Page = (props: Props) => {
   const handleSignUp = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
-      // console.log({data})
       if (data.firstName.trim() === "") return toast.error("First name is required")
       if (data.lastName.trim() === "") return toast.error("Last name is required")
       if (data.userName.trim() === "") return toast.error("Username is required")
@@ -86,7 +85,6 @@ const Page = (props: Props) => {
       setLoading(false)
     } catch (error: any) {
       toast.error(error.message)
-      console.log({error})
       setLoading(false)
       // console.error('Error:', error.message.split('/')[1].split(')')[0].replaceAll('-',' '));
       // console.error('Error Code:', error.code.split('/')[1].replaceAll('-',' '));

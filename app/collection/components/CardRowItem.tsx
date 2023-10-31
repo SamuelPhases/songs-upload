@@ -33,7 +33,6 @@ const CardRowItem = ({ index, likeLoading, setLikeLoading, setUser, songId, user
           const docRef = doc(db, "songs", id);
           const docSnap = await getDoc(docRef);
           if (docSnap.exists()) {
-          //   console.log(docSnap.data())
           const userRef = doc(db, "users", docSnap.data().owner);
           const userDocSnap = await getDoc(userRef)
             if (userDocSnap.exists()) {
@@ -112,12 +111,9 @@ const CardRowItem = ({ index, likeLoading, setLikeLoading, setUser, songId, user
   const deleteSong = async (id: string) => {
     if (user) {
       if (user.id === song?.owner) {
-        // console.log(id)
         setDeleting(true)
         try {
-          // console.log('hi')
           liked && handleLike(id)
-          // console.log('hi')
           const playlistsRef = collection(db, "playlists");
           const q = query(playlistsRef, where("songs", "array-contains", id));
           const querySnapshot = await getDocs(q);
@@ -151,7 +147,6 @@ const CardRowItem = ({ index, likeLoading, setLikeLoading, setUser, songId, user
               history: arrayRemove(id)
             });
           }
-          // console.log('hi')
           await deleteDoc(doc(db, "songs", id))
           toast.success('Deleted song')
         } catch (error: any) {

@@ -50,16 +50,13 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
                     // setIsPlaying(true)
                 } else {
                     if (currentSong.playlist.length > 0) {
-                        // console.log('here')
                         const { songUrl } = currentSong.playlist[playlistItemIndex];
-                        // console.log(currentSong.playlist[playlistItemIndex])
-                        // console.log({songUrl})
                         setSourceUrl(songUrl)
                         audioRef.current.src = songUrl;
                         audioRef.current.load();
                         // audioRef.current.play()
                         // // setIsPlaying(true)
-                        // // console.log('loaded')
+                        toast.success('Songs found.')
                     } else {
                         toast.error('This playlist has no songs.')
                         setIsPlaying(false)
@@ -94,12 +91,10 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
     const handlePrevTrack = () => {
     // Check if there are previous tracks in the playlist
         if (playlistItemIndex > 0) {
-            console.log('hello')
             setPlaylistItemIndex(playlistItemIndex - 1);
             setIsPlaying(false);
             // loadCurrentTrack();
         } else {
-            console.log('hello')
             // setPlaylistItemIndex(currentSong.length - 1);
             if (currentSong) {
                 setPlaylistItemIndex(currentSong?.playlist.length - 1);
@@ -112,7 +107,6 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
         // if (currentSong) {
         //     if (audioRef.current) {
         //         if (audioRef.current.paused) {
-        //             console.log('is it playing the song', audioRef.current.paused)
         //             audioRef.current.play()
         //             // setCurrentSong({...currentSong, play:true})
         //             // setCurrentSong({...currentSong, play:false})
@@ -120,7 +114,6 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
         //             // setIsPlaying(true)
         //             // setIsPlaying(false)
         //             setIsPlaying(!audioRef.current.paused)
-        //             console.log('play')
         //         } else {
         //             audioRef.current.pause()
         //             // setCurrentSong({...currentSong, play:false})
@@ -129,7 +122,6 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
         //             // setIsPlaying(false)
         //             // setIsPlaying(true)
         //             setIsPlaying(audioRef.current.paused)
-        //             console.log('pause')
         //         }
         //     } else {
         //         toast.error('Something went wrong')
@@ -221,22 +213,18 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
                     if (repeatSong) {
                         setCurrentSong({...currentSong, play:true})
                         audioRef.current.play()
-                        console.log('play')
                     } else {
                         handleNextTrack()
                         setCurrentSong({...currentSong, play:true})
                         audioRef.current.play()
-                        console.log('pause')
                     }
                 } else {
                     if (repeatSong) {
                         setCurrentSong({...currentSong, play:true})
                         audioRef.current.play()
-                        console.log('play')
                     } else {
                         setCurrentSong({...currentSong, play:false})
                         audioRef.current.pause()
-                        console.log('pause')
                     }
                 }
             }
@@ -250,8 +238,8 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
         // audio.addEventListener('loadeddata')
         // playBtn()
         loadCurrentTrack();
-    }, [playlistItemIndex])
-    // }, [playlistItemIndex, currentSong]);
+    // }, [playlistItemIndex])
+    }, [playlistItemIndex, currentSong]);
     
     useEffect(() => {
     if (audioRef.current) {
@@ -272,8 +260,6 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
 
     const activePlaylist = currentSong && currentSong?.playlist.length > 0
 
-    // console.log({isPlaying})
-    console.log({currentSong})
     // useEffect(()=>{
     //     if (currentSong) {
     //         if (currentSong.playlist) {
@@ -284,12 +270,6 @@ const AudioPlayer = ({ user, currentSong, setCurrentSong }: Props) => {
     //     }
     // },[currentSong,playlistItemIndex])
 
-    // console.log('hello')
-    // console.log({currentTime})
-    // console.log({duration})
-    // console.log({progress})
-    // console.log({sourceUrl})
-    // console.log({user})
     const videoRef = useRef(null)
     // const togglePictureInPicture = () => {
     //     if (document.pictureInPictureElement) {

@@ -44,7 +44,7 @@ const ArtistCard = ({ id, user }: Props) => {
       }
       getOwner(id)
   },[id,setName])
-  // console.log({id})
+
 
   return (
     <>

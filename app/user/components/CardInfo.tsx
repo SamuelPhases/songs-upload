@@ -14,7 +14,6 @@ interface CardInfoProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTM
 }
 
 const CardInfo = ({ followData, playlistCount, songsCount, user, ...props }: CardInfoProps) => {
-  // console.log({user})
   return (
     <div className="flex flex-col lg:flex-wrap items-start gap-1 justify-between md:flex-row md:items-center md:gap-5 text-white">
       <div {...props} className="flex gap-0.5 flex-row items-center">

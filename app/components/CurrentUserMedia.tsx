@@ -42,10 +42,7 @@ const CurrentUserMedia = ({ song, user, setCurrentSong }: Props) => {
       // setTrack(song)
       router.push(`/track/${song.id}`)
     }
-    // console.log('hello')
-    // console.log({song})
   }
-  // console.log({user})
 
 
   return (

@@ -27,7 +27,6 @@ const CurrentUserPlaylistCard = ({ playlist,  setCurrentSong }: PlaylistCardProp
   const router = useRouter()
   const choosePlaylist = async (playlist: PlaylistsProps) => {
     setCurrentSong({playlist: [], playlistTitle: "", playlistSongOwners: [], song: null, play: false})
-    // console.log('hello')
     try {
       if (playlist) {
         const docRef = doc(db, "playlists", playlist.id);

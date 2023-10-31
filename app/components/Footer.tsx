@@ -57,7 +57,6 @@ const Footer = ({ user }: Props) => {
         setLoading(true)
         try {
           await signOut(auth)
-        //   console.log('hello')
           setLoading(false)
           toast.success('Successfully signed out.')
         //   router.replace('/login')

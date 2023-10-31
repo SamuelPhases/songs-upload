@@ -35,8 +35,6 @@ const CardInfoName = ({ owner, user }: PlaylistCardInfoProps) => {
   },[owner,setName])
   // },[owner,setName,updatingProfile,updateProfileModal])
 
-  console.log({owner})
-  console.log({user})
 
 
 

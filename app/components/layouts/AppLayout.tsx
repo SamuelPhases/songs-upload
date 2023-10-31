@@ -31,7 +31,6 @@ const AppLayout = ({children, ...props}: Props) => {
 
     const router = useRouter()
     const pathname = usePathname()
-    // console.log('pathname ==>>',pathname)
     const likedPage = pathname === "/collection/tracks"
     const searchRouteActive = pathname === "/search"
     const prevPage = () => router.back()
@@ -54,7 +53,6 @@ const AppLayout = ({children, ...props}: Props) => {
     const [users, setUsers] = useRecoilState(otherUsers)
     const [following, setFollowing] = useRecoilState(followingUsers)
     const [followData, setFollowData] = useRecoilState(followInformation)
-    // console.log({followData})
     const [updateProfileModal, setUpdateProfileModal] = useRecoilState(updateProfilePageModal)
     const [updatingProfile, setUpdatingProfile] = useRecoilState(updateProfileLoading)
     const toggleProfileModal = () => setUpdateProfileModal(!updateProfileModal)
@@ -63,7 +61,6 @@ const AppLayout = ({children, ...props}: Props) => {
     const setViewHistory = useSetRecoilState(userViewHistory)
     const setRefactorViewHistory = useSetRecoilState(userRefactorViewHistory)
     // const [deleting, setDeleting] = useRecoilState(deletingStatus)
-    // console.log({updateProfileModal})
 
     useEffect(()=>{
         onAuthStateChanged(auth, async (user:any) => {
@@ -150,17 +147,13 @@ const AppLayout = ({children, ...props}: Props) => {
     // useEffect(()=>{
     //   const followingUser = async (id: string) => {
     //     // setCheckFollowing(true)
-    //     console.log('a')
-    //     console.log(id)
     //     try {
     //       const docRef = doc(db, "follow", id);
     //       const docSnap = await getDoc(docRef)
     //       if (docSnap.exists()) {
-    //         console.log(docSnap.data())
     //         // docSnap.data().followers.includes(user.id) ? setFollowingValue(true) : setFollowingValue(false)
     //         setFollowData(docSnap.data())
     //       } else {
-    //         console.log('ab')
     //       }
     //     } catch (error: any) {
     //       toast.error(error.message)
@@ -171,7 +164,6 @@ const AppLayout = ({children, ...props}: Props) => {
     //   user && followingUser(user.id)
     // },[user,setFollowData])
     // // },[loadingFollow,id,user])
-    // console.log({followData})
 
     const [currentSong, setCurrentSong] = useRecoilState(currentPlaying)
     const [uploadModal, setUploadModal] = useState(false)
@@ -182,7 +174,6 @@ const AppLayout = ({children, ...props}: Props) => {
         setMoreLinksModal(false)
     }
     const toggleLinksModal = () => setMoreLinksModal(!moreLinksModal)
-    // console.log({playlists})
     const [songsFound, setSongsFound] = useRecoilState(searchSongResults)
     const [artistsFound, setArtistsFound] = useRecoilState(searchArtistResults)
     const [playlistsFound, setPlaylistsFound] = useRecoilState(searchPlaylistResults)
@@ -225,7 +216,6 @@ const AppLayout = ({children, ...props}: Props) => {
       debouncedSearch.trim() !== "" && handleSearch(debouncedSearch.toLowerCase())
     },[debouncedSearch])
 
-    console.log({user})
     const [mobileSideNav, setMobileSideNav] = useState<boolean>(false)
     const toggleMobileSideNav = () => setMobileSideNav(!mobileSideNav)
     const closeMobileSideNav = () => setMobileSideNav(false)

@@ -51,7 +51,6 @@ const Page = (props: Props) => {
   const handleSignIn = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
-      // console.log({data})
       if (data.email.trim() === "") return toast.error("Email is required")
       if (data.password.trim() === "") return toast.error("Password is required")
       setLoading(true)
@@ -61,7 +60,6 @@ const Page = (props: Props) => {
       setLoading(false)
     } catch (error: any) {
       toast.error(error.message)
-      console.log({error})
       setLoading(false)
       // console.error('Error:', error.message.split('/')[1].split(')')[0].replaceAll('-',' '));
       // console.error('Error Code:', error.code.split('/')[1].replaceAll('-',' '));
